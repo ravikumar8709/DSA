@@ -1,0 +1,27 @@
+
+public class selectionsort {
+
+    static void sort(int arr[], int n) {
+        for (int i = 0; i < n - 1; i++) {
+            int smallest = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[smallest]) {
+                    smallest = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[smallest];
+            arr[smallest] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {4, 6, 2, 5, 1, 3};
+        int n = arr.length;
+        selectionsort obj = new selectionsort();
+        obj.sort(arr, n);
+        for (int ch : arr) {
+            System.out.print(ch + " ");
+        }
+    }
+}
